@@ -21,9 +21,8 @@ app.use(cors());
 app.use('/user', userRoutes);
 app.use('/expenses', expenseRoutes); 
 
-// Users.hasMany(Expense);
-// Expense.belongsTo(Users);
-
+Users.hasMany(Expense, { foreignKey: 'userId' });
+Expense.belongsTo(Users, { foreignKey: 'userId' });
 
 const port = 3000;
 sequelize

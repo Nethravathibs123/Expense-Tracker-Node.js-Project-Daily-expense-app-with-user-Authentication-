@@ -9,10 +9,11 @@ exports.addExpense = async (req, res) => {
         description,  
           category,
           amount,
+          userId: req.user.id, 
          
       });
       res.status(201).json(newExpense);
-  } catch (error) {
+  } catch (error) { 
       console.error('Error adding expense:', error);
       res.status(500).json({ error: 'Error adding expense' });
   }
@@ -53,7 +54,6 @@ exports.updateExpense = async (req, res) => {
   }
 };
 
-// Delete an expense
 exports.deleteExpense = async (req, res) => {
   const expenseId = req.params.id;
 

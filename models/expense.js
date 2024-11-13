@@ -24,6 +24,10 @@ const Expense = sequelize.define('expense', {
         values:['Food & Beverage','Fuel','Transport','Movie'],
         allowNull:false
   },
+  userId: { 
+    type: Sequelize.INTEGER,
+    allowNull: false,
+},
   
 });
 
